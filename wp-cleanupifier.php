@@ -101,3 +101,11 @@ echo 'My widget content';
 }
  
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
+
+/**
+ * Filter Yoast Meta Priority
+ **/
+function gf_wpseo_metabox_prio() {
+	return 'low' ;								  
+}
+add_filter('wpseo_metabox_prio' , 'gf_wpseo_metabox_prio' );
