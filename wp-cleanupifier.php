@@ -109,3 +109,18 @@ function gf_wpseo_metabox_prio() {
 	return 'low' ;								  
 }
 add_filter('wpseo_metabox_prio' , 'gf_wpseo_metabox_prio' );
+
+/**
+ * Remove AIM, Jabber, YIM from User Profile
+ **/
+if ( !function_exists( 'extra_contact_info' ) ) :
+	function extra_contact_info($contactmethods) {
+	
+	    unset($contactmethods['aim']);
+	    unset($contactmethods['jabber']);
+	    unset($contactmethods['yim']);
+	
+	    return $contactmethods;
+	}
+	add_filter('user_contactmethods', 'extra_contact_info');
+endif;
