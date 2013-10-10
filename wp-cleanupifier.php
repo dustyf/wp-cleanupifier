@@ -85,17 +85,16 @@ function wpc_hide_help() {
 }
 add_action( 'admin_head', 'wpc_hide_help' );
 
+/**
+* Create a custom dashboard widget
+*/
 function wpc_custom_dashboard_widgets() {
-global $wp_meta_boxes;
- 
-wp_add_dashboard_widget( 'custom_help_widget', 'My Widget Title', 'wpc_custom_dashboard_help' );
+	global $wp_meta_boxes;
+	wp_add_dashboard_widget( 'custom_help_widget', 'My Widget Title', 'wpc_custom_dashboard_help' );
 }
 
- /**
- * Create a custom dashboard widget
- */
 function wpc_custom_dashboard_help() {
-echo 'My widget content';
+	echo 'My widget content';
 }
 add_action( 'wp_dashboard_setup', 'wpc_custom_dashboard_widgets' );
 
