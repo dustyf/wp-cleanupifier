@@ -53,8 +53,8 @@ define( 'DISALLOW_FILE_EDIT', true );
 /**
  * Remove Dashboard Widgets
  */
-add_action( 'admin_init', 'wpc__remove_dashboard_widgets' );
-function wpc__remove_dashboard_widgets() {
+add_action( 'admin_init', 'wpc_remove_dashboard_widgets' );
+function wpc_remove_dashboard_widgets() {
 	remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );   // right now
 	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' ); // recent comments
 	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal') ;  // incoming links
@@ -64,7 +64,6 @@ function wpc__remove_dashboard_widgets() {
 	remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );   // wordpress blog
 	remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );   // other wordpress news
 }
-add_action( 'wp_dashboard_setup', 'wpc_remove_dashboard_widgets' );
 
 /**
  * Remove Screen Options
